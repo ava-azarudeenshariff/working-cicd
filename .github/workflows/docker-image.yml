@@ -22,10 +22,6 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build and push Docker image
-      uses: docker/build-push-action@v3
-      with:
-          context: .
-          push: true
-          tags: docker push azarudeenshariff/working-cicd:tagname
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/working-cicd:$(date +%s)
 
  
