@@ -32,7 +32,9 @@ jobs:
     - name: ngrok
       run: sudo tar -xvzf ngrok-v3-stable-linux-amd64.tgz
     - name: connectnig account 
-      run: ./ngrok config add-authtoken ${{ secrets.TOKEN }}
+      run: ./ngrok config add-authtoken ${{ secrets.TOKEN }}   
+    - name: stoping
+      run: ll
     - name: mv
       run:  mv ngrok /usr/local/bin
     - name: starting the tunnel
