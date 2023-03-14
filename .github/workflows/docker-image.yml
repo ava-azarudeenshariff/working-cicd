@@ -34,7 +34,7 @@ jobs:
     - name: connectnig account 
       run: ./ngrok config add-authtoken 2MznvSeI4IPtagqiIKAC8egwXn8_7HX16rTuTMGubSzbSzJL3
     - name: cd
-      run: cd ngrok-v3-stable-linux-amd64.tgz
+      run: cd ngrok-v3-stable-linux-amd64
     - name: lis
       run: ls
     - name: starting the tunnel
