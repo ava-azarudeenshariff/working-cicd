@@ -25,6 +25,8 @@ jobs:
       run: docker push ${{ secrets.DOCKER_USERNAME }}/working-cicd:v1
     - name: pulling the image
       run: docker pull ${{ secrets.DOCKER_USERNAME }}/working-cicd:v1
+    - name: running the container
+      run: docker run --name test -p 8084:80 -d ${{ secrets.DOCKER_USERNAME }}/working-cicd:v1
       
 
  
