@@ -30,7 +30,7 @@ jobs:
     - name: downloading ngrok
       run: wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
     - name: unzib the file
-      run: ls
+      run: tar --extract --file ngrok-v3-stable-linux-amd64.tgz
     - name: connectnig account 
       run: ngrok config add-authtoken ${{ secrets.TOKEN }}
     - name: starting the tunnel
