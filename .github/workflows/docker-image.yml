@@ -33,8 +33,6 @@ jobs:
       run: sudo tar -xvzf ngrok-v3-stable-linux-amd64.tgz
     - name: connectnig account 
       run: ./ngrok config add-authtoken 2MznvSeI4IPtagqiIKAC8egwXn8_7HX16rTuTMGubSzbSzJL3
-    - name: ll
-      run: ll
     - name: change
       run: chmod 777 ngrok
     - name: starting the tunnel
