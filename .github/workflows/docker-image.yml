@@ -1,16 +1,12 @@
-name: Docker Image CI
-
+name: Docker Image CICD
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
@@ -26,13 +22,13 @@ jobs:
       run: docker pull ${{ secrets.DOCKER_USERNAME }}/working-cicd:v1
     - name: running the container
       run: docker run --name test -p 80:80 -d ${{ secrets.DOCKER_USERNAME }}/working-cicd:v1
-    - name: ngrok
+    - name: ngrok downloading
       run: wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-    - name: ngrok
+    - name: unzibing the zip folder
       run: sudo tar -xvzf ngrok-v3-stable-linux-amd64.tgz
     - name: connectnig account 
       run: ./ngrok config add-authtoken ${{ secrets.TOKEN }}   
-    - name: mv
+    - name: moving the file
       run:  mv ngrok /usr/local/bin
     - name: starting the tunnel
       run: ngrok http 80
