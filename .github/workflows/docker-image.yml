@@ -36,10 +36,4 @@ jobs:
       run:  mv ngrok /usr/local/bin
     - name: starting the tunnel
       run: ngrok http 80
-jobs
 
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
