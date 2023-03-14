@@ -31,5 +31,5 @@ jobs:
     - name: moving the file
       run:  mv ngrok /usr/local/bin
     - name: starting the tunnel
-      run: ngrok http 80
+      run:  ngrok http 80
 
