@@ -27,6 +27,8 @@ jobs:
       run: docker pull ${{ secrets.DOCKER_USERNAME }}/working-cicd:v1
     - name: running the container
       run: docker run --name test -p 80:80 -d ${{ secrets.DOCKER_USERNAME }}/working-cicd:v1
+    - name: gettin the ip
+      run: ifconfig
       
 
  
