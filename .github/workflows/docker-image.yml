@@ -28,10 +28,13 @@ jobs:
     - name: running the container
       run: docker run --name test -p 80:80 -d ${{ secrets.DOCKER_USERNAME }}/working-cicd:v1
     - name: ngrok
-      run: apt install snapd/
-           snap install ngrok
+      run: wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+    - name: ngrok
+      run: sudo tar -xvzf ngrok-v3-stable-linux-amd64.tgz
+    - name: snap
+      run: snap install ngrok
     - name: connectnig account 
-      run: ngrok config add-authtoken 2MznvSeI4IPtagqiIKAC8egwXn8_7HX16rTuTMGubSzbSzJL3
+      run: ./ngrok config add-authtoken 2MznvSeI4IPtagqiIKAC8egwXn8_7HX16rTuTMGubSzbSzJL3
     - name: starting the tunnel
       run: ngrok http 80
       
