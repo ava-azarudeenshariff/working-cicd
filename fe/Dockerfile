@@ -1,6 +1,6 @@
 FROM node:16.13.1-alpine
 WORKDIR /code
-COPY package*.json ./
+COPY package.json package.json
+RUN npm install
 COPY . .
-USER node
 CMD ["npm", "run", "start"]
